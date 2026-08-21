@@ -789,3 +789,246 @@ html:lang(ko) { word-break: keep-all; overflow-wrap: normal; line-break: strict;
   .service-detail-reverse figure { grid-column: 2; grid-row: 1; order: initial; }
   .service-detail-reverse .lumina-service-label { grid-column: 3; grid-row: 1; order: initial; border-right: 0; border-left: 1px solid var(--lumina-ink); }
 }
+
+/* Full-page density reset — content, not blank surface, carries the visual hierarchy. */
+:root {
+  --copy-size: clamp(16px, 1.08vw, 19px);
+  --detail-size: clamp(16px, .95vw, 18px);
+  --interface-size: clamp(13px, .82vw, 15px);
+  --micro-size: clamp(11px, .7vw, 12px);
+}
+
+.demo-header { min-height: 88px; }
+.demo-brand { font-size: clamp(17px, 1.05vw, 20px); }
+.demo-nav a, .reserve-button { font-size: var(--interface-size); }
+.lumina-return, .page-eyebrow, .section-label, .hero-caption,
+.animal-hero-photo figcaption, .dental-hero-meta, .dental-hero-photo figcaption,
+.demo-footer, .demo-toast { font-size: var(--micro-size); }
+
+.demo-shell .hero-description,
+.demo-shell .page-intro p,
+.demo-shell .content-copy p,
+.demo-shell .list-row p,
+.demo-shell .visit-line span,
+.demo-shell .booking-section p,
+.demo-shell .contact-section p,
+.animal-hero-copy > div > p:last-child,
+.animal-welcome > div > p:not(.section-label),
+.animal-path-card p,
+.dental-hero-title-block > p:last-of-type,
+.dental-statement > div p,
+.dental-directory-row p,
+.oriental-ritual-intro > div:last-child p,
+.oriental-rhythm p {
+  font-size: var(--copy-size);
+  line-height: 1.8;
+}
+
+.demo-shell .feature-card p,
+.demo-shell .animal-path-card p,
+.demo-shell .dental-directory-row p,
+.demo-shell .oriental-rhythm p { font-size: var(--copy-size); line-height: 1.78; }
+.hero-links a, .animal-primary-link, .animal-welcome a, .content-copy a,
+.booking-section button, .contact-form button, .contact-form label,
+.visit-line, .demo-footer strong { font-size: var(--interface-size); }
+.page-heading { padding: clamp(72px, 7vw, 112px) 9% clamp(46px, 4.8vw, 72px); }
+.page-heading .page-title { max-width: 920px; font-size: clamp(48px, 5vw, 76px); line-height: 1.08; letter-spacing: -.065em; }
+.page-intro { align-items: start; gap: clamp(48px, 6vw, 96px); padding: clamp(64px, 6vw, 92px) 9%; }
+.page-intro h2 { max-width: 540px; font-size: clamp(36px, 3.2vw, 48px); line-height: 1.22; letter-spacing: -.055em; }
+.page-intro p { max-width: 660px; padding-top: 5px; }
+.list-row { gap: clamp(24px, 3vw, 50px); padding: clamp(34px, 3.5vw, 56px) 0; }
+.list-row span, .feature-card span { font-size: var(--micro-size); }
+.list-row h2 { font-size: clamp(28px, 2.55vw, 42px); line-height: 1.2; letter-spacing: -.055em; }
+.feature-card { min-height: clamp(245px, 19vw, 330px); padding: clamp(28px, 3vw, 48px) 9%; }
+.feature-card h3 { max-width: 300px; font-size: clamp(25px, 2.35vw, 38px); line-height: 1.22; letter-spacing: -.055em; }
+.content-split { min-height: clamp(480px, 42vw, 660px); }
+.content-copy { padding: clamp(42px, 7vw, 96px); }
+.content-copy h2 { font-size: clamp(36px, 3.7vw, 57px); line-height: 1.18; letter-spacing: -.055em; }
+.visit-info { padding: clamp(48px, 7vw, 96px); }
+.visit-info h2 { max-width: 640px; font-size: clamp(40px, 4.3vw, 65px); line-height: 1.14; letter-spacing: -.06em; }
+.visit-line { grid-template-columns: minmax(118px, .4fr) 1fr; gap: 22px; padding: 20px 0; line-height: 1.75; }
+.booking-section, .contact-section { gap: clamp(48px, 7vw, 105px); padding: clamp(70px, 8vw, 120px) 9%; }
+.booking-section h2, .contact-section h2 { font-size: clamp(40px, 4.35vw, 66px); line-height: 1.14; letter-spacing: -.06em; }
+
+/* Shared team cards receive the missing portrait and a compact reading order. */
+.profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.profile {
+  display: grid;
+  grid-template-columns: minmax(175px, .62fr) minmax(0, 1.38fr);
+  min-height: clamp(370px, 29vw, 480px);
+  padding: 0;
+  overflow: hidden;
+}
+.profile-photo { min-height: 100%; margin: 0; overflow: hidden; background: var(--surface); }
+.profile-photo img { object-position: center; filter: saturate(.84) contrast(.98); transition: transform .6s cubic-bezier(.22,.72,.26,1); }
+.profile:hover .profile-photo img { transform: scale(1.045); }
+.profile-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(32px, 4.8vw, 72px); }
+.profile-mark { width: clamp(58px, 4.6vw, 76px); height: clamp(58px, 4.6vw, 76px); font-size: clamp(25px, 2vw, 34px); }
+.profile h2 { margin: clamp(30px, 3.5vw, 52px) 0 9px; font-size: clamp(34px, 3vw, 50px); line-height: 1.16; letter-spacing: -.055em; }
+.profile-copy > p:first-of-type { margin: 0 0 18px; color: var(--ink); font-size: var(--interface-size); font-weight: 700; }
+.profile-copy > p:last-of-type { max-width: 32rem; margin: 0; color: var(--muted); font-size: var(--copy-size); line-height: 1.78; }
+
+/* Animal hospital — guardian journey, with readable checkpoints and photo-led cards. */
+.animal-hero-copy { padding: clamp(42px, 4.6vw, 76px) clamp(30px, 4.7vw, 76px) clamp(32px, 3.5vw, 54px); }
+.animal-hero-copy h1 { max-width: 560px; font-size: clamp(48px, 4.8vw, 74px); line-height: 1.04; letter-spacing: -.07em; }
+.animal-primary-link { max-width: 360px; margin-top: 38px; padding: 17px 20px; }
+.animal-quick-path { margin-top: 32px; }
+.animal-quick-path li { grid-template-columns: 42px 1fr; gap: 12px; padding: 15px 0; font-size: var(--detail-size); line-height: 1.6; }
+.animal-welcome { min-height: clamp(450px, 40vw, 630px); }
+.animal-welcome > div { padding: clamp(50px, 7vw, 100px); }
+.animal-welcome h2 { max-width: 550px; font-size: clamp(39px, 3.85vw, 57px); line-height: 1.17; letter-spacing: -.06em; }
+.animal-care-path { gap: clamp(52px, 7vw, 110px); padding: clamp(70px, 7vw, 106px) 8%; }
+.animal-care-path h2 { max-width: 510px; font-size: clamp(39px, 3.85vw, 57px); line-height: 1.17; letter-spacing: -.06em; }
+.animal-path-card { grid-template-columns: 48px minmax(150px, .8fr) minmax(260px, 1.2fr) auto; gap: clamp(18px, 2vw, 32px); padding: clamp(25px, 2.6vw, 38px) 0; }
+.animal-path-card span, .animal-path-card b { font-size: var(--micro-size); }
+.animal-path-card h3 { font-size: clamp(24px, 2vw, 32px); line-height: 1.22; letter-spacing: -.05em; }
+.animal-page-intro { grid-template-columns: minmax(290px, .72fr) minmax(420px, 1.28fr); }
+.animal-list-block { gap: clamp(18px, 2.2vw, 32px); padding: clamp(54px, 5vw, 82px) 8%; }
+.animal-list-block .list-row {
+  min-height: clamp(250px, 20vw, 335px);
+  justify-content: center;
+  gap: clamp(18px, 2vw, 28px);
+  padding: clamp(30px, 3vw, 48px);
+  border: 1px solid rgba(33,69,56,.12);
+  background-color: #e8eddb;
+  background-image: linear-gradient(90deg, rgba(232,237,219,.96) 0%, rgba(232,237,219,.91) 55%, rgba(232,237,219,.48) 100%), url('images/animal-detail.png');
+  background-position: center, right center;
+  background-size: cover;
+}
+.animal-list-block .list-row:nth-child(2n) { background-image: linear-gradient(90deg, rgba(232,237,219,.96) 0%, rgba(232,237,219,.91) 55%, rgba(232,237,219,.44) 100%), url('images/animal-space.png'); }
+.animal-list-block .list-row:nth-child(3n) { background-image: linear-gradient(90deg, rgba(232,237,219,.96) 0%, rgba(232,237,219,.91) 55%, rgba(232,237,219,.42) 100%), url('images/animal-hero.png'); }
+.animal-list-block .list-row h2 { max-width: 24rem; font-size: clamp(30px, 2.55vw, 42px); }
+.animal-profile-grid { gap: clamp(18px, 2.2vw, 30px); padding: clamp(42px, 4.5vw, 72px) 8%; }
+.animal-profile-grid .profile { min-height: clamp(390px, 28vw, 475px); border: 0; border-radius: 28px; background: #e8eddb; }
+.animal-profile-grid .profile:nth-child(even) { border: 0; }
+.animal-profile-grid .profile-photo img { object-position: 60% center; }
+
+/* Dental — a measured clinical directory, without reducing body copy to metadata. */
+.dental-hero-meta { font-size: var(--micro-size); }
+.dental-hero-title-block > p:last-of-type { max-width: 26rem; }
+.dental-hero-title-block a { font-size: var(--interface-size); }
+.dental-statement { min-height: clamp(530px, 43vw, 690px); }
+.dental-statement > div a { font-size: var(--interface-size); }
+.dental-treatment-directory { padding: clamp(78px, 8vw, 122px) 8% clamp(84px, 9vw, 132px); }
+.dental-treatment-directory h2 { font-size: clamp(41px, 4.1vw, 62px); line-height: 1.17; letter-spacing: -.06em; }
+.dental-directory-row { grid-template-columns: 48px minmax(170px, .78fr) minmax(300px, 1.22fr) 24px; gap: clamp(18px, 2vw, 30px); min-height: clamp(145px, 11vw, 195px); }
+.dental-directory-row span { font-size: var(--micro-size); }
+.dental-directory-row h3 { font-size: clamp(27px, 2.15vw, 35px); letter-spacing: -.055em; }
+.dental-list-block .list-row { min-height: clamp(160px, 12vw, 215px); }
+.dental-profile-grid .profile { min-height: clamp(390px, 29vw, 490px); }
+.dental-profile-grid .profile-photo img { object-position: 38% center; filter: saturate(.62) contrast(.98); }
+
+/* Oriental medicine — slow editorial pacing, but never empty or undersized. */
+.oriental-ritual-intro { gap: clamp(54px, 8vw, 124px); padding: clamp(76px, 8vw, 126px) 10%; }
+.oriental-ritual-intro h2 { font-size: clamp(41px, 4.25vw, 64px); line-height: 1.18; letter-spacing: -.06em; }
+.oriental-rhythm { min-height: clamp(580px, 48vw, 730px); }
+.oriental-rhythm > div { padding: clamp(64px, 7.5vw, 112px) 10%; }
+.oriental-rhythm a { gap: clamp(18px, 2vw, 30px); padding: clamp(26px, 2.8vw, 42px) 0; }
+.oriental-rhythm span { font-size: var(--micro-size); }
+.oriental-rhythm h3 { font-size: clamp(29px, 2.45vw, 39px); letter-spacing: -.055em; }
+.oriental-list-block .list-row { min-height: clamp(175px, 12vw, 225px); }
+.oriental-profile-grid .profile { min-height: clamp(390px, 29vw, 490px); }
+.oriental-profile-grid .profile:nth-child(even) .profile-photo { order: 2; }
+.oriental-profile-grid .profile-photo img { filter: saturate(.65) brightness(.76); }
+
+/* Lumina agency pages: the same scale is applied to live service and portfolio copy. */
+.lumina-site .lumina-menu a, .lumina-site .lumina-contact, .lumina-arrow-link,
+.lumina-solid-link, .lumina-form label { font-size: var(--interface-size); }
+.lumina-site .lumina-eyebrow, .lumina-service-label span, .lumina-service-label p,
+.lumina-approach-list span, .lumina-case span, .lumina-conversion-frame li span,
+.lumina-process-frame li span, .lumina-footer p, .lumina-statement > p,
+.lumina-contact-hero aside > p, .dental-statement > p,
+.dental-treatment-directory header p { font-size: var(--micro-size); }
+.lumina-intro-line p, .lumina-approach-list p, .lumina-feature-frame-copy > p:not(.lumina-eyebrow),
+.lumina-case p, .lumina-conversion-frame li p, .lumina-route-note > p:first-child,
+.lumina-service-copy > p, .lumina-case-feature article > p:not(.lumina-eyebrow),
+.lumina-statement > div p, .lumina-principles article p, .lumina-contact-hero > div > p:last-child,
+.lumina-contact-panel-copy > p:last-child, .lumina-process-frame li p { font-size: var(--copy-size); line-height: 1.8; }
+.lumina-small-note, .lumina-service-copy li, .lumina-case-feature dd, .lumina-form-feedback { font-size: var(--detail-size); line-height: 1.72; }
+.lumina-case-feature dt { font-size: var(--micro-size); }
+.lumina-approach-list a { min-height: clamp(205px, 17vw, 270px); padding: clamp(30px, 3vw, 46px) 7%; }
+.lumina-work h2 { margin-top: clamp(50px, 6vw, 85px); }
+.lumina-work p { font-size: var(--detail-size); line-height: 1.72; }
+.lumina-principles article { min-height: clamp(265px, 21vw, 330px); }
+.lumina-contact-panel-copy h2 { margin-top: clamp(76px, 10vw, 136px); }
+
+@media (max-width: 760px) {
+  .demo-header { min-height: 70px; }
+  .demo-nav a, .reserve-button, .lumina-site .lumina-menu a, .lumina-site .lumina-contact { font-size: 13px; }
+  .demo-shell .hero-description,
+  .demo-shell .page-intro p,
+  .demo-shell .content-copy p,
+  .demo-shell .list-row p,
+  .demo-shell .visit-line span,
+  .demo-shell .booking-section p,
+  .demo-shell .contact-section p,
+  .animal-hero-copy > div > p:last-child,
+  .animal-welcome > div > p:not(.section-label),
+  .animal-path-card p,
+  .dental-hero-title-block > p:last-of-type,
+  .dental-statement > div p,
+  .dental-directory-row p,
+  .oriental-ritual-intro > div:last-child p,
+  .oriental-rhythm p { font-size: 16px; line-height: 1.78; }
+  .page-heading { padding: 64px 7% 40px; }
+  .page-heading .page-title { font-size: clamp(40px, 10vw, 48px); line-height: 1.15; letter-spacing: -.05em; }
+  .page-intro { gap: 26px; padding: 54px 7%; }
+  .page-intro h2 { font-size: clamp(30px, 8.2vw, 37px); line-height: 1.25; }
+  .list-row { gap: 16px; padding: 34px 0; }
+  .list-row h2 { font-size: clamp(27px, 7vw, 33px); }
+  .content-split { min-height: auto; }
+  .content-copy { padding: 58px 7%; }
+  .content-copy h2 { font-size: clamp(33px, 9vw, 42px); }
+  .visit-info { padding: 58px 7%; }
+  .visit-info h2, .booking-section h2, .contact-section h2 { font-size: clamp(34px, 9vw, 43px); }
+  .visit-line { grid-template-columns: 1fr; gap: 5px; padding: 17px 0; }
+  .booking-section, .contact-section { gap: 35px; padding: 68px 7%; }
+
+  .profile-grid, .animal-profile-grid { grid-template-columns: 1fr; gap: 16px; }
+  .profile, .animal-profile-grid .profile, .dental-profile-grid .profile, .oriental-profile-grid .profile { grid-template-columns: 1fr; min-height: auto; }
+  .profile-photo { min-height: 245px; }
+  .profile-copy { padding: 38px 8% 44px; }
+  .profile h2 { margin-top: 30px; font-size: 36px; }
+  .profile-copy > p:first-of-type { font-size: 15px; }
+  .profile-copy > p:last-of-type { font-size: 16px; }
+  .animal-profile-grid { padding: 28px 7%; }
+  .animal-profile-grid .profile { border-radius: 22px; }
+
+  .animal-hero-copy h1 { font-size: clamp(42px, 11.5vw, 51px); line-height: 1.1; }
+  .animal-primary-link { max-width: none; margin-top: 30px; font-size: 15px; }
+  .animal-quick-path li { grid-template-columns: 38px 1fr; padding: 13px 0; font-size: 16px; line-height: 1.55; }
+  .animal-welcome { min-height: auto; }
+  .animal-welcome > div { padding: 60px 7%; }
+  .animal-welcome h2, .animal-care-path h2 { font-size: clamp(33px, 9vw, 42px); }
+  .animal-care-path { gap: 38px; padding: 65px 7%; }
+  .animal-path-card { grid-template-columns: 38px 1fr 16px; gap: 10px; padding: 22px 0; }
+  .animal-path-card h3 { font-size: 25px; }
+  .animal-path-card p { grid-column: 2 / -1; }
+  .animal-page-intro { grid-template-columns: 1fr; }
+  .animal-list-block { gap: 16px; padding: 32px 7% 48px; }
+  .animal-list-block .list-row { min-height: 230px; padding: 30px; background-position: center, 68% center; }
+  .animal-list-block .list-row h2 { font-size: 31px; }
+
+  .dental-statement { min-height: auto; }
+  .dental-treatment-directory { padding: 68px 7%; }
+  .dental-treatment-directory h2 { font-size: clamp(34px, 9vw, 43px); }
+  .dental-directory-row { grid-template-columns: 34px 1fr 16px; gap: 11px; min-height: 0; padding: 25px 0; }
+  .dental-directory-row h3 { font-size: 28px; }
+  .dental-directory-row p { grid-column: 2 / -1; }
+  .dental-list-block .list-row, .oriental-list-block .list-row { min-height: auto; }
+
+  .oriental-ritual-intro { gap: 33px; padding: 68px 7%; }
+  .oriental-ritual-intro h2 { font-size: clamp(34px, 9vw, 43px); }
+  .oriental-rhythm { min-height: auto; }
+  .oriental-rhythm > div { padding: 58px 7%; }
+  .oriental-rhythm h3 { font-size: 29px; }
+  .oriental-profile-grid .profile:nth-child(even) .profile-photo { order: 0; }
+
+  .lumina-intro-line p, .lumina-approach-list p, .lumina-feature-frame-copy > p:not(.lumina-eyebrow),
+  .lumina-case p, .lumina-conversion-frame li p, .lumina-route-note > p:first-child,
+  .lumina-service-copy > p, .lumina-case-feature article > p:not(.lumina-eyebrow),
+  .lumina-statement > div p, .lumina-principles article p, .lumina-contact-hero > div > p:last-child,
+  .lumina-contact-panel-copy > p:last-child, .lumina-process-frame li p { font-size: 16px; line-height: 1.78; }
+  .lumina-small-note, .lumina-service-copy li, .lumina-case-feature dd { font-size: 16px; }
+  .lumina-approach-list a { min-height: 205px; }
+}
