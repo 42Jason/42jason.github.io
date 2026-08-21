@@ -792,10 +792,10 @@ html:lang(ko) { word-break: keep-all; overflow-wrap: normal; line-break: strict;
 
 /* Full-page density reset — content, not blank surface, carries the visual hierarchy. */
 :root {
-  --copy-size: clamp(16px, 1.08vw, 19px);
-  --detail-size: clamp(16px, .95vw, 18px);
-  --interface-size: clamp(13px, .82vw, 15px);
-  --micro-size: clamp(11px, .7vw, 12px);
+  --copy-size: clamp(17px, 1.12vw, 20px);
+  --detail-size: clamp(16px, 1vw, 18px);
+  --interface-size: clamp(15px, .95vw, 17px);
+  --micro-size: clamp(14px, .82vw, 15px);
 }
 
 .demo-header { min-height: 88px; }
@@ -952,9 +952,42 @@ html:lang(ko) { word-break: keep-all; overflow-wrap: normal; line-break: strict;
 .lumina-principles article { min-height: clamp(265px, 21vw, 330px); }
 .lumina-contact-panel-copy h2 { margin-top: clamp(76px, 10vw, 136px); }
 
+/* Text inventory: labels and actions are still information, not decoration. */
+.lumina-logo small, .lumina-site .lumina-logo small, .demo-brand small,
+.lumina-kicker, .lumina-hero-index, .lumina-hero-visual::after,
+.lumina-main-hero-image figcaption, .lumina-work-number,
+.lumina-site .lumina-eyebrow, .lumina-service-label span, .lumina-service-label p,
+.lumina-approach-list span, .lumina-case span, .lumina-conversion-frame li span,
+.lumina-process-frame li span, .lumina-principles article span, .lumina-statement > p, .lumina-contact-hero aside > p,
+.dental-hero-meta, .dental-statement > p, .dental-treatment-directory header p,
+.page-eyebrow, .section-label, .hero-caption, .animal-hero-photo figcaption,
+.dental-hero-photo figcaption, .list-row span, .feature-card span,
+.animal-path-card span, .animal-path-card b, .dental-directory-row span,
+.oriental-rhythm span, .lumina-case-feature dt, .demo-footer, .demo-toast,
+.lumina-footer p, .form-feedback, .lumina-form-feedback { font-size: var(--micro-size); }
+
+.lumina-site .lumina-menu a, .lumina-site .lumina-contact,
+.lumina-header .lumina-contact, .lumina-arrow-link, .lumina-solid-link,
+.lumina-footer > div, .lumina-footer > div a, .lumina-work .work-go,
+.demo-nav a, .reserve-button, .lumina-return, .hero-links a,
+.animal-primary-link, .animal-welcome a, .content-copy a,
+.booking-section button, .contact-form button, .contact-form label,
+.contact-form input, .contact-form textarea, .visit-line,
+.dental-hero-title-block a, .dental-statement > div a,
+.oriental-ritual-intro a, .lumina-form label, .lumina-form input,
+.lumina-form textarea, .lumina-form select { font-size: var(--interface-size); }
+
+.demo-footer strong { font-size: var(--interface-size); }
+
 @media (max-width: 760px) {
+  :root {
+    --copy-size: 16px;
+    --detail-size: 16px;
+    --interface-size: 14px;
+    --micro-size: 13px;
+  }
   .demo-header { min-height: 70px; }
-  .demo-nav a, .reserve-button, .lumina-site .lumina-menu a, .lumina-site .lumina-contact { font-size: 13px; }
+  .demo-nav a, .reserve-button, .lumina-site .lumina-menu a, .lumina-site .lumina-contact { font-size: var(--interface-size); }
   .demo-shell .hero-description,
   .demo-shell .page-intro p,
   .demo-shell .content-copy p,
@@ -989,13 +1022,13 @@ html:lang(ko) { word-break: keep-all; overflow-wrap: normal; line-break: strict;
   .profile-photo { min-height: 245px; }
   .profile-copy { padding: 38px 8% 44px; }
   .profile h2 { margin-top: 30px; font-size: 36px; }
-  .profile-copy > p:first-of-type { font-size: 15px; }
+  .profile-copy > p:first-of-type { font-size: var(--interface-size); }
   .profile-copy > p:last-of-type { font-size: 16px; }
   .animal-profile-grid { padding: 28px 7%; }
   .animal-profile-grid .profile { border-radius: 22px; }
 
   .animal-hero-copy h1 { font-size: clamp(42px, 11.5vw, 51px); line-height: 1.1; }
-  .animal-primary-link { max-width: none; margin-top: 30px; font-size: 15px; }
+  .animal-primary-link { max-width: none; margin-top: 30px; font-size: var(--interface-size); }
   .animal-quick-path li { grid-template-columns: 38px 1fr; padding: 13px 0; font-size: 16px; line-height: 1.55; }
   .animal-welcome { min-height: auto; }
   .animal-welcome > div { padding: 60px 7%; }
