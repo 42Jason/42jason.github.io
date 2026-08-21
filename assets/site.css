@@ -666,3 +666,126 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .oriental-list-block { padding: 0 7%; }
   .oriental-list-block .list-row { grid-template-columns: 1fr; min-height: auto; }
 }
+
+/* Korean type correction — keep sentence units intact, then give copy enough measure. */
+html:lang(ko) { word-break: keep-all; overflow-wrap: normal; line-break: strict; }
+.demo-shell p, .demo-shell li, .demo-shell dd, .lumina-site p, .lumina-site li, .lumina-site dd { letter-spacing: -.018em; }
+.demo-shell .hero-description,
+.demo-shell .page-intro p,
+.demo-shell .content-copy p,
+.demo-shell .list-row p,
+.demo-shell .profile > p:last-child,
+.demo-shell .visit-line span,
+.demo-shell .booking-section p,
+.demo-shell .contact-section p,
+.animal-welcome > div > p:not(.section-label),
+.animal-path-card p,
+.dental-hero-title-block > p:last-of-type,
+.dental-statement > div p,
+.dental-directory-row p,
+.oriental-ritual-intro > div:last-child p,
+.oriental-rhythm p {
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.78;
+  letter-spacing: -.018em;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+.demo-shell .feature-card p, .demo-shell .animal-path-card p, .demo-shell .dental-directory-row p, .demo-shell .oriental-rhythm p { font-size: clamp(14px, .95vw, 16px); line-height: 1.72; }
+.demo-shell .hero-title,
+.demo-shell .page-heading .page-title,
+.demo-shell .page-intro h2,
+.demo-shell .content-copy h2,
+.demo-shell .feature-card h3,
+.animal-welcome h2,
+.animal-care-path h2,
+.dental-hero-title-block h1,
+.dental-statement h2,
+.dental-treatment-directory h2,
+.oriental-ritual-intro h2,
+.oriental-rhythm h3 { letter-spacing: -.055em; }
+
+/* The dental statement used an implicit grid cell for its body copy. */
+.dental-statement { grid-template-columns: 88px minmax(0, 1.08fr) minmax(340px, .92fr); grid-template-rows: 1fr auto; }
+.dental-statement > p { grid-column: 1; grid-row: 1 / -1; }
+.dental-statement h2 { align-self: end; grid-column: 2; grid-row: 1; max-width: 680px; padding: 8vw 6vw 34px; font-size: clamp(36px, 4.15vw, 61px); line-height: 1.14; }
+.dental-statement > div { align-self: start; grid-column: 2; grid-row: 2; max-width: 620px; padding: 0 6vw 7vw; }
+.dental-statement > div p { max-width: 34rem; color: #526774; }
+.dental-statement > div a { margin-top: 31px; font-size: 13px; }
+.dental-statement figure { grid-column: 3; grid-row: 1 / -1; padding: 4vw 4vw 4vw 0; }
+.dental-hero-title-block h1 { font-size: clamp(34px, 3.15vw, 47px); line-height: 1.18; }
+.dental-hero-title-block > p:last-of-type { max-width: 25rem; }
+.dental-hero-note { line-height: 1.55; letter-spacing: -.035em; }
+.dental-page-intro .page-intro p, .dental-list-block .list-row p { max-width: 38rem; }
+
+/* Agency pages use fewer oversized display styles and a wider copy measure. */
+.lumina-main-hero-copy h1 { font-size: clamp(54px, 5.25vw, 94px); letter-spacing: -.06em; line-height: .97; }
+.lumina-main-hero-copy h1 span { white-space: nowrap; }
+.lumina-intro-line p,
+.lumina-approach-list p,
+.lumina-feature-frame-copy > p:not(.lumina-eyebrow),
+.lumina-case p,
+.lumina-conversion-frame li p,
+.lumina-route-note > p:first-child,
+.lumina-service-copy > p,
+.lumina-case-feature article > p:not(.lumina-eyebrow),
+.lumina-statement > div p,
+.lumina-principles article p,
+.lumina-contact-hero > div > p:last-child,
+.lumina-contact-panel-copy > p:last-child {
+  font-size: clamp(15px, 1.04vw, 17px);
+  line-height: 1.78;
+  letter-spacing: -.018em;
+}
+.lumina-feature-frame h2, .lumina-work-section h2, .lumina-conversion-frame h2, .lumina-contact-frame h2, .lumina-route-hero h1, .lumina-contact-hero h1, .lumina-case-feature h2, .lumina-statement h2, .lumina-principles h2, .lumina-contact-panel-copy h2 { letter-spacing: -.055em; }
+.lumina-approach-list strong, .lumina-case h3, .lumina-service-copy h2, .lumina-principles article h3 { letter-spacing: -.055em; }
+
+@media (max-width: 760px) {
+  .demo-shell .hero-description,
+  .demo-shell .page-intro p,
+  .demo-shell .content-copy p,
+  .demo-shell .list-row p,
+  .demo-shell .profile > p:last-child,
+  .demo-shell .visit-line span,
+  .demo-shell .booking-section p,
+  .demo-shell .contact-section p,
+  .animal-welcome > div > p:not(.section-label),
+  .animal-path-card p,
+  .dental-hero-title-block > p:last-of-type,
+  .dental-statement > div p,
+  .dental-directory-row p,
+  .oriental-ritual-intro > div:last-child p,
+  .oriental-rhythm p { font-size: 16px; line-height: 1.75; }
+  .demo-shell .feature-card p, .demo-shell .animal-path-card p, .demo-shell .dental-directory-row p, .demo-shell .oriental-rhythm p { font-size: 15px; line-height: 1.72; }
+
+  .dental-statement { display: grid; grid-template-columns: 1fr; grid-template-rows: auto; }
+  .dental-statement > p { grid-column: auto; grid-row: auto; padding: 20px 7%; border-right: 0; border-bottom: 1px solid var(--line); writing-mode: horizontal-tb; }
+  .dental-statement h2 { grid-column: auto; grid-row: auto; max-width: 27rem; padding: 60px 7% 26px; font-size: clamp(36px, 10vw, 44px); line-height: 1.16; }
+  .dental-statement > div { grid-column: auto; grid-row: auto; max-width: none; padding: 0 7% 54px; }
+  .dental-statement > div p { max-width: 31rem; }
+  .dental-statement figure { grid-column: auto; grid-row: auto; min-height: 380px; padding: 0 7% 52px; }
+  .dental-hero-title-block h1 { font-size: clamp(32px, 8.4vw, 39px); line-height: 1.2; }
+
+  .lumina-main-hero-copy h1 { font-size: clamp(44px, 12.35vw, 50px); line-height: 1; letter-spacing: -.055em; }
+  .lumina-main-hero-copy h1 span { white-space: nowrap; }
+  .lumina-intro-line p,
+  .lumina-approach-list p,
+  .lumina-feature-frame-copy > p:not(.lumina-eyebrow),
+  .lumina-case p,
+  .lumina-conversion-frame li p,
+  .lumina-route-note > p:first-child,
+  .lumina-service-copy > p,
+  .lumina-case-feature article > p:not(.lumina-eyebrow),
+  .lumina-statement > div p,
+  .lumina-principles article p,
+  .lumina-contact-hero > div > p:last-child,
+  .lumina-contact-panel-copy > p:last-child { font-size: 16px; line-height: 1.76; }
+}
+
+/* Preserve a readable copy column when the second service frame is reversed. */
+@media (min-width: 761px) {
+  .service-detail-reverse { grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr) 88px; }
+  .service-detail-reverse .lumina-service-copy { grid-column: 1; grid-row: 1; order: initial; }
+  .service-detail-reverse figure { grid-column: 2; grid-row: 1; order: initial; }
+  .service-detail-reverse .lumina-service-label { grid-column: 3; grid-row: 1; order: initial; border-right: 0; border-left: 1px solid var(--lumina-ink); }
+}

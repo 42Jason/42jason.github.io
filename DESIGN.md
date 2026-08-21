@@ -29,14 +29,15 @@
 ## Design principles
 - Principle 1: 그래픽 장식보다 실제 사진과 공간의 소재를 쓴다.
 - Principle 2: 첫 화면은 헤더를 제외한 화면 높이를 충분히 사용하고, 좌우 가장자리까지 레이아웃의 긴장감을 유지한다.
-- Principle 3: 문장은 의미 단위로만 줄바꿈하며, 폭·크기·자간을 먼저 조정한다.
+- Principle 3: 한글 문장은 어절을 끊지 않는다. 좁은 열이 생기면 강제 줄바꿈이나 글자 쪼개기 대신 그리드·본문 폭·글자 크기를 먼저 조정한다.
 - Principle 4: 같은 정보 구조를 유지하더라도 업종별 첫 화면과 콘텐츠 배열은 서로 다른 방식으로 설계한다. 동물병원은 보호자 안내를 따라가는 따뜻한 여정형, 치과는 진료 항목을 명료하게 훑는 정밀 인덱스형, 한의원은 사진과 여백을 따라 읽는 몰입형 에디토리얼로 구분한다.
 - Principle 5: 루미나 에이전시 사이트는 단일 랜딩 페이지가 아니라, 서비스와 결과물, 기준, 상담이 독립적으로 읽히는 다중 페이지 구조를 기본으로 한다.
 - Tradeoffs: 모션은 브랜드 인상을 돕는 정도로 제한하고 콘텐츠 읽기와 예약 행동을 방해하지 않는다.
 
 ## Visual language
 - Color: 루미나는 블랙·웜그레이·산뜻한 라임·주황을 쓰는 편집형 에이전시 톤. 동물병원은 오크·세이지·크림, 치과는 아이보리·월넛·네이비, 한의원은 짙은 목재·한지·흙빛
-- Typography: 한국어를 중심으로 한 명료한 헤드라인. 루미나는 큰 산세리프와 모노 라벨을 대비시키고, 한의원·치과에는 절제된 세리프 사용
+- Typography: 한국어를 중심으로 한 명료한 헤드라인. 루미나는 큰 산세리프와 모노 라벨을 대비시키고, 한의원·치과에는 절제된 세리프 사용. 본문은 데스크톱·모바일 모두 15px 이상, 1.72 이상의 행간과 충분한 본문 폭을 기본값으로 둔다. `html:lang(ko)`에서 `word-break: keep-all`과 `line-break: strict`을 적용하며, 제목의 음수 자간은 과도하게 쓰지 않는다.
+- Typography research basis: W3C CSS Text Level 4의 한글 어절 단위 줄바꿈(`word-break: keep-all`)과 WCAG 1.4.12의 텍스트 간격 확장 시 콘텐츠·기능 보존 기준을 적용 근거로 삼는다.
 - Spacing/layout rhythm: 넓은 여백과 얇은 구조선, 데스크톱은 전체 화면을 쓰는 분할 레이아웃
 - Shape/radius/elevation: 동물병원만 부드러운 라운드, 치과는 정갈한 직선, 한의원은 낮은 대비의 면과 격자
 - Motion: 루미나는 첫 화면 텍스트와 사진의 짧은 진입, 콘텐츠 카드의 절제된 확대를 사용한다. 한의원은 한지문이 열리는 첫 진입 모션, 동물병원과 치과는 사진·텍스트의 짧은 진입과 카드 호버. 모두 `prefers-reduced-motion`을 존중한다.
@@ -51,7 +52,7 @@
 ## Accessibility
 - Target standard: 기본적인 WCAG AA 대비와 키보드 조작 가능 링크·버튼
 - Keyboard/focus behavior: 네이티브 링크와 버튼의 기본 포커스 유지
-- Contrast/readability: 사진 위 텍스트에는 반투명 소재 오버레이를 두고, 긴 문장은 충분한 행간을 둔다.
+- Contrast/readability: 사진 위 텍스트에는 반투명 소재 오버레이를 두고, 긴 문장은 충분한 행간을 둔다. WCAG의 텍스트 간격 확장 환경에서도 콘텐츠·기능이 가려지지 않게 고정 높이와 좁은 본문 열을 피한다.
 - Screen-reader semantics: `h1` 1개, 의미 있는 이미지 대체텍스트, `aria-live` 예약·문의 안내
 - Reduced motion and sensory considerations: `prefers-reduced-motion: reduce`에서 문 열림·진입·호버 이동을 중지한다.
 
@@ -78,7 +79,7 @@
 - Design-token constraints: 업종별 변수·공통 컴포넌트를 유지하면서 개별 톤을 분리
 - Performance constraints: 이미지 기반이므로 과도한 애니메이션·자동 영상은 사용하지 않음
 - Compatibility constraints: 최신 Chromium과 모바일 브라우저, `prefers-reduced-motion` 지원
-- Test/screenshot expectations: 데스크톱·390px에서 가로 넘침 없이 첫 화면·메뉴·주요 링크를 확인
+- Test/screenshot expectations: 데스크톱·390px에서 가로 넘침 없이 첫 화면·메뉴·주요 링크를 확인. 긴 한글 본문은 단어가 한 줄마다 떨어지지 않는지, 어절·조사 단위가 분리되지 않는지 별도 시각 검수한다.
 
 ## Open questions
 - [ ] 실제 병원 촬영본과 원장·의료진 사진 확보 시점 / 사용자 / 최종 포트폴리오 품질에 영향
