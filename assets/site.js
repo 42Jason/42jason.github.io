@@ -7,6 +7,8 @@ const demoContent = {
     hero: '../assets/images/animal-hero.png',
     detail: '../assets/images/animal-detail.png',
     space: '../assets/images/animal-space.png',
+    consultation: '../assets/images/animal-consultation.png',
+    teamPortrait: '../assets/images/animal-team-doctor.png',
     caption: '예시 사진 · 실제 촬영본으로 교체',
     menu: [
       ['about', '병원소개'], ['services', '진료안내'], ['team', '의료진'], ['visit', '방문안내']
@@ -19,6 +21,15 @@ const demoContent = {
       ['01', '첫 방문 안내', '진료 전 준비, 주차, 접수 흐름을 한 화면에 정리합니다.', 'visit.html'],
       ['02', '예방 진료', '검진과 접종 주기를 아이의 생활에 맞춰 안내합니다.', 'services.html'],
       ['03', '진료 후 케어', '귀가 후 관찰할 신호와 다음 일정을 다시 확인합니다.', 'about.html']
+    ],
+    pageImages: {
+      about: ['../assets/images/animal-consultation.png', '보호자에게 반려동물의 상태를 설명하는 수의사 예시 사진'],
+      services: ['../assets/images/animal-detail.png', '반려동물 진료 공간의 예시 사진'],
+      visit: ['../assets/images/animal-space.png', '동물의료센터 방문 공간 예시 사진']
+    },
+    teamPhotos: [
+      ['../assets/images/animal-hero.png', '김해든 대표원장 예시 사진'],
+      ['../assets/images/animal-team-doctor.png', '윤다온 진료원장 예시 사진']
     ],
     pages: {
       about: {
@@ -68,6 +79,8 @@ const demoContent = {
     hero: '../assets/images/dental-hero.png',
     detail: '../assets/images/dental-detail.png',
     space: '../assets/images/dental-space.png',
+    consultation: '../assets/images/dental-consultation.png',
+    teamPortrait: '../assets/images/dental-team-doctor.png',
     caption: '예시 사진 · 실제 촬영본으로 교체',
     menu: [
       ['about', '치과소개'], ['services', '진료안내'], ['team', '의료진'], ['visit', '오시는 길']
@@ -80,6 +93,15 @@ const demoContent = {
       ['01', '처음 상담', '방문 목적과 불편한 점을 듣고 필요한 검사부터 안내합니다.', 'visit.html'],
       ['02', '대표 진료', '임플란트, 심미 보철, 예방 관리의 흐름을 정갈하게 소개합니다.', 'services.html'],
       ['03', '의료진 소개', '실제 원장별 진료 철학과 세부 분야를 확인할 수 있습니다.', 'team.html']
+    ],
+    pageImages: {
+      about: ['../assets/images/dental-consultation.png', '환자에게 진단 자료를 설명하는 치과의사 예시 사진'],
+      services: ['../assets/images/dental-hero.png', '치료 전 상담을 진행하는 치과의사 예시 사진'],
+      visit: ['../assets/images/dental-detail.png', '치과 대기 공간 예시 사진']
+    },
+    teamPhotos: [
+      ['../assets/images/dental-team-doctor.png', '정미소 대표원장 예시 사진'],
+      ['../assets/images/dental-hero.png', '이연우 진료원장 예시 사진']
     ],
     pages: {
       about: {
@@ -129,6 +151,8 @@ const demoContent = {
     hero: '../assets/images/oriental-hero.png',
     detail: '../assets/images/oriental-detail.png',
     space: '../assets/images/oriental-space.png',
+    consultation: '../assets/images/oriental-consultation.png',
+    teamPortrait: '../assets/images/oriental-team-doctor.png',
     caption: '예시 사진 · 실제 촬영본으로 교체',
     menu: [
       ['about', '한의원 소개'], ['services', '진료안내'], ['team', '의료진'], ['visit', '방문안내']
@@ -141,6 +165,15 @@ const demoContent = {
       ['01', '첫 진료 안내', '처음 상담에서 나누는 이야기와 준비할 내용을 안내합니다.', 'visit.html'],
       ['02', '맞춤 진료', '통증, 소화, 수면 등 생활의 흐름에서 출발하는 진료를 소개합니다.', 'services.html'],
       ['03', '원장 소개', '진료 철학과 전문 분야를 차분한 문장과 사진으로 전합니다.', 'team.html']
+    ],
+    pageImages: {
+      about: ['../assets/images/oriental-consultation.png', '환자와 생활 리듬을 상담하는 한의사 예시 사진'],
+      services: ['../assets/images/oriental-detail.png', '한의원 진료 공간의 한지와 목재 소재 예시 사진'],
+      visit: ['../assets/images/oriental-space.png', '한의원 방문 공간의 목재와 한지 소재 예시 사진']
+    },
+    teamPhotos: [
+      ['../assets/images/oriental-hero.png', '서온담 대표원장 예시 사진'],
+      ['../assets/images/oriental-team-doctor.png', '한유진 진료원장 예시 사진']
     ],
     pages: {
       about: {
@@ -197,15 +230,15 @@ function contactBlock(data, site) {
 }
 
 function animalHomeMarkup(data) {
-  return `<section class="animal-home-hero"><figure class="animal-hero-photo"><img src="${data.hero}" alt="${data.brand} 예시 메인 사진"><figcaption>${data.caption}</figcaption></figure><div class="animal-hero-copy"><p class="page-eyebrow">${data.subbrand}</p><div><h1>${data.homeTitle}</h1><p>${data.homeDescription}</p></div><a class="animal-primary-link" href="visit.html">첫 방문, 이렇게 준비해요 <span>↗</span></a><ol class="animal-quick-path"><li><span>01</span>우리 아이의 불편을 들을게요</li><li><span>02</span>필요한 진료만 차분히 안내해요</li><li><span>03</span>집으로 돌아간 뒤까지 살펴봐요</li></ol></div></section><section class="animal-welcome"><div><p class="section-label">OUR PROMISE</p><h2>${data.introTitle}</h2><p>${data.introBody}</p><a href="about.html">${data.brand} 이야기 보기 ↗</a></div><figure><img src="${data.space}" alt="${data.brand} 공간 소재 예시 사진"></figure></section><section class="animal-care-path"><header><p class="section-label">CARE PATH</p><h2>보호자가 궁금해할 순서대로<br>안내합니다.</h2></header><div>${data.features.map(([number, title, description, href]) => `<a class="animal-path-card" href="${href}"><span>${number}</span><h3>${title}</h3><p>${description}</p><b>자세히 보기 ↗</b></a>`).join('')}</div></section>${bookingBlock('animal')}`;
+  return `<section class="animal-home-hero"><figure class="animal-hero-photo"><img src="${data.hero}" alt="${data.brand} 예시 메인 사진"><figcaption>${data.caption}</figcaption></figure><div class="animal-hero-copy"><p class="page-eyebrow">${data.subbrand}</p><div><h1>${data.homeTitle}</h1><p>${data.homeDescription}</p></div><a class="animal-primary-link" href="visit.html">첫 방문, 이렇게 준비해요 <span>↗</span></a><ol class="animal-quick-path"><li><span>01</span>우리 아이의 불편을 들을게요</li><li><span>02</span>필요한 진료만 차분히 안내해요</li><li><span>03</span>집으로 돌아간 뒤까지 살펴봐요</li></ol></div></section><section class="animal-welcome"><div><p class="section-label">OUR PROMISE</p><h2>${data.introTitle}</h2><p>${data.introBody}</p><a href="about.html">${data.brand} 이야기 보기 ↗</a></div><figure><img src="${data.consultation}" alt="보호자와 반려동물의 상태를 상담하는 수의사 예시 사진" loading="lazy"></figure></section><section class="animal-care-path"><header><p class="section-label">CARE PATH</p><h2>보호자가 궁금해할 순서대로<br>안내합니다.</h2></header><div>${data.features.map(([number, title, description, href]) => `<a class="animal-path-card" href="${href}"><span>${number}</span><h3>${title}</h3><p>${description}</p><b>자세히 보기 ↗</b></a>`).join('')}</div></section>${bookingBlock('animal')}`;
 }
 
 function dentalHomeMarkup(data) {
-  return `<section class="dental-home-hero"><div class="dental-hero-meta"><span>THE QUIET STANDARD</span><b>01 / 03</b></div><div class="dental-hero-title-block"><p class="page-eyebrow">${data.subbrand}</p><h1><span>정확함이</span><span class="only-once">편안함이 되도록.</span></h1><p>${data.homeDescription}</p><a href="services.html">진료의 기준 보기 ↗</a></div><figure class="dental-hero-photo"><img src="${data.hero}" alt="${data.brand} 예시 메인 사진"><figcaption>${data.caption}</figcaption></figure><aside class="dental-hero-note">진료 전, 치료 중, 관리까지<br>이해할 수 있는 흐름을 만듭니다.</aside></section><section class="dental-statement"><p>PRECISION / CALM / CARE</p><h2>${data.introTitle}</h2><div><p>${data.introBody}</p><a href="about.html">미소연의 진료 철학 ↗</a></div><figure><img src="${data.space}" alt="${data.brand} 공간 소재 예시 사진"></figure></section><section class="dental-treatment-directory"><header><p>CLINICAL DIRECTORY</p><h2>필요한 정보를<br>정확하게 찾도록.</h2></header><div>${data.features.map(([number, title, description, href]) => `<a class="dental-directory-row" href="${href}"><span>${number}</span><h3>${title}</h3><p>${description}</p><b>↗</b></a>`).join('')}</div></section>${bookingBlock('dental')}`;
+  return `<section class="dental-home-hero"><div class="dental-hero-meta"><span>THE QUIET STANDARD</span><b>01 / 03</b></div><div class="dental-hero-title-block"><p class="page-eyebrow">${data.subbrand}</p><h1><span>정확함이</span><span class="only-once">편안함이 되도록.</span></h1><p>${data.homeDescription}</p><a href="services.html">진료의 기준 보기 ↗</a></div><figure class="dental-hero-photo"><img src="${data.hero}" alt="${data.brand} 예시 메인 사진"><figcaption>${data.caption}</figcaption></figure><aside class="dental-hero-note">진료 전, 치료 중, 관리까지<br>이해할 수 있는 흐름을 만듭니다.</aside></section><section class="dental-statement"><p>PRECISION / CALM / CARE</p><h2>${data.introTitle}</h2><div><p>${data.introBody}</p><a href="about.html">미소연의 진료 철학 ↗</a></div><figure><img src="${data.consultation}" alt="환자에게 진단 자료를 설명하는 치과의사 예시 사진" loading="lazy"></figure></section><section class="dental-treatment-directory"><header><p>CLINICAL DIRECTORY</p><h2>필요한 정보를<br>정확하게 찾도록.</h2></header><div>${data.features.map(([number, title, description, href]) => `<a class="dental-directory-row" href="${href}"><span>${number}</span><h3>${title}</h3><p>${description}</p><b>↗</b></a>`).join('')}</div></section>${bookingBlock('dental')}`;
 }
 
 function orientalHomeMarkup(data) {
-  return `<section class="demo-hero oriental-hero"><div class="hero-copy"><div><p class="page-eyebrow">${data.subbrand}</p><h1 class="hero-title">${data.homeTitle}</h1><p class="hero-description">${data.homeDescription}</p></div><div class="hero-links"><a href="services.html">진료안내 보기 ↗</a><a href="visit.html">첫 방문 안내 ↗</a></div></div><div class="hero-image"><img src="${data.hero}" alt="${data.brand} 예시 메인 사진"><p class="hero-caption">${data.caption}</p></div></section><section class="oriental-ritual-intro"><div><p class="section-label">A QUIET RHYTHM</p><h2>${data.introTitle}</h2></div><div><p>${data.introBody}</p><a href="about.html">온담의 진료 방식 ↗</a></div></section><section class="oriental-rhythm"><figure><img src="${data.space}" alt="${data.brand} 공간 소재 예시 사진"></figure><div>${data.features.map(([number, title, description, href]) => `<a href="${href}"><span>${number}</span><h3>${title}</h3><p>${description}</p><b>↗</b></a>`).join('')}</div></section>${bookingBlock('oriental')}`;
+  return `<section class="demo-hero oriental-hero"><div class="hero-copy"><div><p class="page-eyebrow">${data.subbrand}</p><h1 class="hero-title">${data.homeTitle}</h1><p class="hero-description">${data.homeDescription}</p></div><div class="hero-links"><a href="services.html">진료안내 보기 ↗</a><a href="visit.html">첫 방문 안내 ↗</a></div></div><div class="hero-image"><img src="${data.hero}" alt="${data.brand} 예시 메인 사진"><p class="hero-caption">${data.caption}</p></div></section><section class="oriental-ritual-intro"><div><p class="section-label">A QUIET RHYTHM</p><h2>${data.introTitle}</h2></div><div><p>${data.introBody}</p><a href="about.html">온담의 진료 방식 ↗</a></div></section><section class="oriental-rhythm"><figure><img src="${data.consultation}" alt="환자와 생활 리듬을 상담하는 한의사 예시 사진" loading="lazy"></figure><div>${data.features.map(([number, title, description, href]) => `<a href="${href}"><span>${number}</span><h3>${title}</h3><p>${description}</p><b>↗</b></a>`).join('')}</div></section>${bookingBlock('oriental')}`;
 }
 
 function homeMarkup(data, site) {
@@ -216,15 +249,16 @@ function homeMarkup(data, site) {
 
 function standardPageMarkup(data, pageKey, site) {
   const page = data.pages[pageKey];
+  const [pageImage, pageImageAlt] = data.pageImages[pageKey] || [data.space, `${data.brand} 공간 소재 예시 사진`];
   const intro = `<section class="page-heading ${site}-page-heading"><p class="page-eyebrow">${data.subbrand}</p><h1 class="page-title">${page.title}</h1></section><section class="page-intro ${site}-page-intro"><h2>${pageKey === 'team' ? '사람의 이름과 진료 철학을 함께 전합니다' : pageKey === 'visit' ? '방문 전 궁금한 내용을 한 화면에 정리합니다' : '필요한 내용을 차분하게 설명합니다'}</h2><p>${page.lead}</p></section>`;
   if (page.rows) {
-    return `${intro}<section class="list-block ${site}-list-block">${page.rows.map(([number, title, body]) => `<article class="list-row"><span>${number}</span><h2>${title}</h2><p>${body}</p></article>`).join('')}</section><section class="content-split ${site}-content-split"><div class="content-photo"><img src="${data.space}" alt="${data.brand} 공간 소재 예시 사진"></div><div class="content-copy"><h2>공간의 인상까지 이어지는 페이지</h2><p>실제 제작 시에는 병원의 촬영본과 원고를 바탕으로 구성합니다. 원장과 의료진, 진료 공간, 벽면과 소재의 사진을 함께 사용해 병원만의 분위기를 만듭니다.</p><a href="visit.html">방문 안내 보기 ↗</a></div></section>${bookingBlock(site)}`;
+    return `${intro}<section class="list-block ${site}-list-block">${page.rows.map(([number, title, body]) => `<article class="list-row"><span>${number}</span><h2>${title}</h2><p>${body}</p></article>`).join('')}</section><section class="content-split ${site}-content-split"><div class="content-photo"><img src="${pageImage}" alt="${pageImageAlt}" loading="lazy"></div><div class="content-copy"><h2>공간의 인상까지 이어지는 페이지</h2><p>실제 제작 시에는 병원의 촬영본과 원고를 바탕으로 구성합니다. 원장과 의료진, 진료 공간, 벽면과 소재의 사진을 함께 사용해 병원만의 분위기를 만듭니다.</p><a href="visit.html">방문 안내 보기 ↗</a></div></section>${bookingBlock(site)}`;
   }
   if (page.profiles) {
-    return `${intro}<section class="profile-grid ${site}-profile-grid">${page.profiles.map(([name, role, body], index) => `<article class="profile"><figure class="profile-photo"><img src="${index === 0 ? data.hero : data.detail}" alt="${name} 의료진 예시 사진"></figure><div class="profile-copy"><div class="profile-mark">${name.slice(0, 1)}</div><h2>${name}</h2><p>${role}</p><p>${body}</p></div></article>`).join('')}</section>${bookingBlock(site)}`;
+    return `${intro}<section class="profile-grid ${site}-profile-grid">${page.profiles.map(([name, role, body], index) => { const [profileImage, profileAlt] = data.teamPhotos[index] || [data.teamPortrait, `${name} 의료진 예시 사진`]; return `<article class="profile"><figure class="profile-photo"><img src="${profileImage}" alt="${profileAlt}" loading="lazy"></figure><div class="profile-copy"><div class="profile-mark">${name.slice(0, 1)}</div><h2>${name}</h2><p>${role}</p><p>${body}</p></div></article>`; }).join('')}</section>${bookingBlock(site)}`;
   }
   if (page.visit) {
-    return `${intro}<section class="visit-grid ${site}-visit-grid"><div class="visit-info"><h2>방문에 필요한 내용을 미리 확인해 주세요</h2>${page.visit.map(([label, value]) => `<div class="visit-line"><strong>${label}</strong><span>${value.replace(/\n/g, '<br>')}</span></div>`).join('')}</div><div class="visit-visual"><img src="${data.space}" alt="${data.brand} 공간 소재 예시 사진"></div></section>${bookingBlock(site)}${contactBlock(data, site)}`;
+    return `${intro}<section class="visit-grid ${site}-visit-grid"><div class="visit-info"><h2>방문에 필요한 내용을 미리 확인해 주세요</h2>${page.visit.map(([label, value]) => `<div class="visit-line"><strong>${label}</strong><span>${value.replace(/\n/g, '<br>')}</span></div>`).join('')}</div><div class="visit-visual"><img src="${pageImage}" alt="${pageImageAlt}" loading="lazy"></div></section>${bookingBlock(site)}${contactBlock(data, site)}`;
   }
   return intro;
 }
@@ -259,7 +293,7 @@ function bindInteractions(root) {
     });
   }
 
-  const motionTargets = root.querySelectorAll('.page-intro, .feature-card, .content-split, .page-heading, .list-row, .profile, .visit-grid, .booking-section, .contact-section, .animal-welcome, .animal-care-path, .dental-statement, .dental-treatment-directory, .oriental-ritual-intro, .oriental-rhythm');
+  const motionTargets = root.querySelectorAll('.page-intro, .feature-card, .content-split, .page-heading, .list-row, .profile, .visit-grid, .booking-section, .contact-section, .animal-welcome, .animal-care-path, .animal-path-card, .dental-statement, .dental-treatment-directory, .dental-directory-row, .oriental-ritual-intro, .oriental-rhythm, .oriental-rhythm a');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {

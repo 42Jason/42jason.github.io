@@ -2,9 +2,9 @@
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-08-21
+- Last refreshed: 2026-08-22
 - Primary product surfaces: 루미나 에이전시 메인·서비스·포트폴리오·회사소개·상담 페이지, 동물병원·치과·한의원 홈페이지 제작 데모
-- Evidence reviewed: `index.html`, `services.html`, `work.html`, `about.html`, `contact.html`, `animal/`, `dental/`, `oriental/`, `assets/site.css`, `assets/site.js`, `assets/lumina.js`, `assets/images/`, 사용자 제공 한의원 한지문 참고 이미지
+- Evidence reviewed: `index.html`, `services.html`, `work.html`, `about.html`, `contact.html`, `animal/`, `dental/`, `oriental/`, `assets/site.css`, `assets/site.js`, `assets/lumina.js`, `assets/images/`의 업종별 진료·공간·의료진 예시 사진, 사용자 제공 한의원 한지문 참고 이미지
 
 ## Brand
 - Personality: 세련된 에이전시형이되, 병원별 개성이 분명한 신뢰 중심 디자인
@@ -34,6 +34,7 @@
 - Principle 7: 사진·약력·설명이 없는 빈 카드를 만들지 않는다. 카드의 높이는 콘텐츠의 양과 사진 비율에서 정하고, 이름과 설명을 카드 하단으로 과도하게 밀어 넣지 않는다.
 - Principle 4: 같은 정보 구조를 유지하더라도 업종별 첫 화면과 콘텐츠 배열은 서로 다른 방식으로 설계한다. 동물병원은 보호자 안내를 따라가는 따뜻한 여정형, 치과는 진료 항목을 명료하게 훑는 정밀 인덱스형, 한의원은 사진과 여백을 따라 읽는 몰입형 에디토리얼로 구분한다.
 - Principle 5: 루미나 에이전시 사이트는 단일 랜딩 페이지가 아니라, 서비스와 결과물, 기준, 상담이 독립적으로 읽히는 다중 페이지 구조를 기본으로 한다.
+- Principle 8: 사진은 페이지의 정보 역할과 일치시킨다. 의료진 소개에는 의료진 사진, 진료 철학에는 상담 장면, 방문안내에는 실제 공간 사진을 쓰며, 인물·공간을 장식용으로 바꿔 쓰지 않는다.
 - Tradeoffs: 모션은 브랜드 인상을 돕는 정도로 제한하고 콘텐츠 읽기와 예약 행동을 방해하지 않는다.
 
 ## Visual language
@@ -42,8 +43,8 @@
 - Typography research basis: W3C CSS Text Level 4의 한글 어절 단위 줄바꿈(`word-break: keep-all`)과 WCAG 1.4.12의 텍스트 간격 확장 시 콘텐츠·기능 보존 기준을 적용 근거로 삼는다.
 - Spacing/layout rhythm: 넓은 여백과 얇은 구조선, 데스크톱은 전체 화면을 쓰는 분할 레이아웃
 - Shape/radius/elevation: 동물병원만 부드러운 라운드, 치과는 정갈한 직선, 한의원은 낮은 대비의 면과 격자
-- Motion: 루미나는 첫 화면 텍스트와 사진의 짧은 진입, 콘텐츠 카드의 절제된 확대를 사용한다. 한의원은 한지문이 열리는 첫 진입 모션, 동물병원과 치과는 사진·텍스트의 짧은 진입과 카드 호버. 모두 `prefers-reduced-motion`을 존중한다.
-- Imagery/iconography: 실제 공간의 목재 결·한지·미장·석재 등 소재와 인물 사진. 삽화와 임의의 추상 도형은 사용하지 않는다.
+- Motion: 루미나는 첫 화면 텍스트와 사진의 짧은 진입, 콘텐츠 카드의 절제된 확대를 사용한다. 동물병원은 따뜻한 사진 도입과 안내 행의 이동, 치과는 진단 사진의 프레임 와이프와 정밀 디렉터리의 수평 반응, 한의원은 한지문 열림과 낮은 대비의 사진 와이프를 사용한다. 모션은 스크롤 진입 한 번과 마우스 호버에만 반응하며 모두 `prefers-reduced-motion`을 존중한다.
+- Imagery/iconography: 실제 진료에 맞는 상담 장면, 의료진 인물 사진, 공간의 목재 결·한지·미장·석재 소재를 분리해 사용한다. 삽화와 임의의 추상 도형, 의료진 페이지에 공간만 넣는 방식은 사용하지 않는다.
 
 ## Components
 - Existing components to reuse: `demo-header`, `booking-section`, `contact-section`, 공통 예약·문의 동작
