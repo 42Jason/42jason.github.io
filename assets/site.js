@@ -28,7 +28,7 @@ const demoContent = {
       visit: ['../assets/images/animal-space.png', '동물의료센터 방문 공간 예시 사진']
     },
     teamPhotos: [
-      ['../assets/images/animal-hero.png', '김해든 대표원장 예시 사진'],
+      ['../assets/images/animal-team-lead.png', '김해든 대표원장과 반려견 예시 사진'],
       ['../assets/images/animal-team-doctor.png', '윤다온 진료원장 예시 사진']
     ],
     pages: {
@@ -101,7 +101,7 @@ const demoContent = {
     },
     teamPhotos: [
       ['../assets/images/dental-team-doctor.png', '정미소 대표원장 예시 사진'],
-      ['../assets/images/dental-hero.png', '이연우 진료원장 예시 사진']
+      ['../assets/images/dental-team-doctor-lee.png', '이연우 진료원장 예시 사진']
     ],
     pages: {
       about: {
@@ -293,7 +293,7 @@ function bindInteractions(root) {
     });
   }
 
-  const motionTargets = root.querySelectorAll('.page-intro, .feature-card, .content-split, .page-heading, .list-row, .profile, .visit-grid, .booking-section, .contact-section, .animal-welcome, .animal-care-path, .animal-path-card, .dental-statement, .dental-treatment-directory, .dental-directory-row, .oriental-ritual-intro, .oriental-rhythm, .oriental-rhythm a');
+  const motionTargets = root.querySelectorAll('.page-intro, .content-split, .page-heading, .profile-grid, .visit-grid, .booking-section, .contact-section, .animal-welcome, .animal-care-path, .dental-statement, .dental-treatment-directory, .oriental-ritual-intro, .oriental-rhythm');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
